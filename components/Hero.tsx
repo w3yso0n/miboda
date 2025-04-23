@@ -10,7 +10,7 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl font-bold tracking-wide mb-4">¡25 Años de Amor!</h1>
           <p className="text-lg md:text-xl">Acompáñanos a celebrar nuestra boda de plata de</p>
           <h2 className="text-3xl md:text-4xl font-semibold mt-2">Ma Teresa Leyva Nolasco & Jose Luis Avila Romo</h2>
-          <p className="mt-4 text-base">24 de mayo del 2025</p>
+          <p className="mt-4 text-base">23 de mayo del 2025</p>
         </CardContent>
       </Card>
     </section>

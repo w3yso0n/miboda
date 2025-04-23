@@ -16,7 +16,7 @@ function getTimeLeft(targetDate: Date) {
 }
 
 export default function Countdown() {
-  const targetDate = new Date("2025-05-24T00:00:00")
+  const targetDate = new Date("2025-05-23T00:00:00")
   const [timeLeft, setTimeLeft] = useState(getTimeLeft(targetDate))
 
   useEffect(() => {
