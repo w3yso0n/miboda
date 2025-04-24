@@ -7,7 +7,7 @@ export default function Info() {
       <div className="max-w-2xl mx-auto space-y-6">
         <div className="flex items-center justify-center gap-4">
           <CalendarDays className="w-6 h-6" />
-          <span className="text-lg">Sábado 23 de mayo de 2025</span>
+          <span className="text-lg">Viernes 23 de mayo de 2025</span>
         </div>
         <div className="flex items-center justify-center gap-4">
           <Clock className="w-6 h-6" />
