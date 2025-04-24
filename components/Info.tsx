@@ -12,7 +12,7 @@ export default function Info() {
         <div className="flex items-center justify-center gap-4">
           <Clock className="w-6 h-6" />
           <span className="text-lg">
-            Ceremonia: 5:00 PM | Recepción: 7:00 PM
+            Ceremonia: 6:00 PM | Recepción: 8:00 PM
           </span>
         </div>
         <div className="flex items-center justify-center gap-4">

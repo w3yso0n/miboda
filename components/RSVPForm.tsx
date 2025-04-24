@@ -1,10 +1,10 @@
 // components/RSVPForm.tsx
 "use client"
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { supabase } from "@/lib/supabase"
+import { useState } from "react"
 
 export default function RSVPForm() {
   const [submitted, setSubmitted] = useState(false)
@@ -34,8 +34,8 @@ export default function RSVPForm() {
       {!submitted ? (
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
         <Input name="nombre" type="text" placeholder="Tu nombre completo" required />
-        <Input name="invitados" type="number" placeholder="Número de acompañantes" required min={0} />
-        <Textarea name="mensaje" placeholder="¿Quieres dejarnos un mensaje?" />
+        <Input name="invitados" type="number" placeholder="Número de acompañantes" value={0} hidden />
+        <Textarea name="mensaje" placeholder="¿Quieres dejarnos un mensaje?" hidden/>
         <Button type="submit">Confirmar asistencia</Button>
       </form>
       ) : (
