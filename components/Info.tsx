@@ -33,12 +33,12 @@ export default function Info() {
             página.
           </strong>
         </p>
-        <a
+        {/* <a
           href="#rsvp"
           className="fixed bottom-6 right-6 bg-[#9A3324] hover:bg-[#7c291d] text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 z-50"
         >
           Confirmar ahora
-        </a>
+        </a> */}
 
         <div className="mt-8 flex justify-center">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200920.2062747701!2d-103.50424941128402!3d20.6544833045286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f53ff0b0a83cd%3A0x2563eb182533b276!2sQuinta%20la%20Esperanza!5e0!3m2!1ses-419!2smx!4v1745437775314!5m2!1ses-419!2smx" width="600" height="450"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
