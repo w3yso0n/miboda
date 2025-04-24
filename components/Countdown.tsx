@@ -23,7 +23,7 @@ function getTimeLeft(targetDate: Date) {
 
 export default function Countdown() {
   // Crear la fecha objetivo a las 6:00 PM (18:00) del día especificado
-  const [targetDate, setTargetDate] = useState<Date>(new Date())
+ 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   const [isClient, setIsClient] = useState(false)
 
@@ -32,7 +32,6 @@ export default function Countdown() {
     
     // Configurar la fecha objetivo a las 18:00 del día deseado
     const date = new Date("2025-05-23T18:00:00")
-    setTargetDate(date)
     setTimeLeft(getTimeLeft(date))
     
     const timer = setInterval(() => {
