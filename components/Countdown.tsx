@@ -31,7 +31,7 @@ export default function Countdown() {
     setIsClient(true)
     
     // Configurar la fecha objetivo a las 18:00 del día deseado
-    const date = new Date("2025-05-23T18:00:00")
+    const date = new Date("2025-05-23T17:00:00")
     setTimeLeft(getTimeLeft(date))
     
     const timer = setInterval(() => {
