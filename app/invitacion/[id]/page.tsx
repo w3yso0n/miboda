@@ -11,10 +11,15 @@ type Invitado = {
   familia: string
 }
 
+type DatosInvitacion = Invitado & {
+  mensaje_personalizado?: string
+  mesa?: string
+}
+
 export default function InvitacionPersonalizada() {
   const params = useParams()
   const id = params?.id as string
-  const [data, setData] = useState<any>(null)
+const [data, setData] = useState<DatosInvitacion | null>(null)
   const [familia, setFamilia] = useState<Invitado[]>([])
 
   useEffect(() => {
