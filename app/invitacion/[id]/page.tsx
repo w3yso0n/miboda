@@ -1,10 +1,11 @@
 "use client"
-import { useParams } from "next/navigation"
-import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase"
 import { motion } from "framer-motion"
+import { useParams } from "next/navigation"
+import { useEffect, useState } from "react"
 
 type Invitado = {
+  mesa: string
   id: string
   nombre: string
   confirmado: boolean
@@ -30,9 +31,9 @@ const [data, setData] = useState<DatosInvitacion | null>(null)
         setData(data)
         if (data.familia) {
           const { data: familiaData } = await supabase
-            .from("rsvp")
-            .select("id, nombre, confirmado, familia")
-            .eq("familia", data.familia)
+  .from("rsvp")
+  .select("id, nombre, confirmado, familia, mesa") // ← añade mesa aquí
+  .eq("familia", data.familia)
           setFamilia(familiaData || [])
         }
       } else {
@@ -92,27 +93,42 @@ const [data, setData] = useState<DatosInvitacion | null>(null)
           <p className="text-2xl font-bold text-[#9A3324]">{data.mesa || "Por confirmar"}</p>
         </motion.div>
 
-        {familia.length > 0 && (
-          <motion.div
-            className="text-left bg-white/70 p-4 rounded-lg shadow-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-          >
-            <h2 className="text-xl font-bold text-[#9A3324] mb-2">Integrantes de la familia:</h2>
-            <ul className="space-y-2">
-              {familia.map((f) => (
-                <li key={f.id} className="flex items-center justify-between border-b pb-1">
-                  <span>{f.nombre}</span>
-                  <span className={`text-sm font-semibold ${f.confirmado ? "text-green-600" : "text-red-500"}`}>
-                    {f.confirmado ? "✅ Confirmado" : "❌ No confirmado"}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-        <p className="mt-8 text-gray-500 text-sm italic">Con amor, Familia Avila Romo y Leyva Nolaso 💐</p>
+        <motion.div
+  className="mb-8"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.1 }}
+>
+  <p className="text-lg font-medium">📅 El acceso al casino será a partir de las 7:15 PM</p>
+
+  {familia.length > 0 && (
+    <motion.div
+      className="text-left bg-white/70 p-4 rounded-lg shadow-md mt-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.2 }}
+    >
+      <h2 className="text-xl font-bold text-[#9A3324] mb-4">Integrantes de la familia:</h2>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {familia.map((f) => (
+          <div key={f.id} className="bg-white p-3 rounded shadow border border-gray-200">
+            <p className="font-semibold text-gray-700">{f.nombre}</p>
+            <p className="text-sm text-gray-600">
+              Mesa: <strong>{f.mesa || "Por confirmar"}</strong>
+            </p>
+            <p className={`text-sm mt-1 font-semibold ${f.confirmado ? "text-green-600" : "text-red-500"}`}>
+              {f.confirmado ? "✅ Confirmado" : "❌ No confirmado"}
+            </p>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  )}
+
+  <p className="mt-8 text-gray-500 text-sm italic">Con amor, Familia Avila Leyva 💐</p>
+</motion.div>
+
       </motion.div>
     </main>
   )
