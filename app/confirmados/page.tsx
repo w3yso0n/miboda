@@ -1,6 +1,6 @@
 "use client"
-import { useEffect, useState } from "react"
 import { supabase } from "@/lib/supabase"
+import { useEffect, useState } from "react"
 
 type Confirmado = {
   id: string
@@ -180,7 +180,7 @@ export default function Confirmados() {
                 </td>
                 <td className="p-3 border">
                   <a
-                    href={`http://localhost:3000/invitacion/${c.id}`}
+                    href={`https://miboda-jm.vercel.app/invitacion/${c.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 underline"
